@@ -1,0 +1,16 @@
+- if @blogs.count < 1
+  | No blogs so far.. Create a new one
+- else
+  - @blogs.each do |blog|
+    = render "blog_content", :blog => blog
+    = link_to blog_path(blog) do
+      font color="grey"
+        b
+          | Posted 
+          = time_ago_in_words(blog.created_at)
+          |  ago.
+    br
+br
+br
+= link_to "Post new blog", new_blog_path
+br

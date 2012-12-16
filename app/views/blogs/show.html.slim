@@ -1,0 +1,16 @@
+| Blog details..
+br
+br
+= render "blog_content", :blog => @blog
+font color="grey"
+  b
+    | Posted 
+    = time_ago_in_words(@blog.created_at)
+    | ago.
+/ br
+/ = link_to "Edit", edit_blog_path(@blog)
+/ |  | 
+/ = link_to "Delete", @blog, method: :delete, data: { confirm: "Are you sure to delete?" }
+hr
+br
+= link_to "Home Page", root_path

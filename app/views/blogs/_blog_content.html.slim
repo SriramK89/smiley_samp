@@ -1,0 +1,7 @@
+b Title: 
+= blog.title
+br
+b Content: 
+/ = generate_smiley(blog.content).html_safe
+/ br
+= emoji_renderer(blog.content)
